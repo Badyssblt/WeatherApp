@@ -64,6 +64,13 @@ document.getElementById("close__icon").addEventListener("click", () => {
   document.getElementById("close__icon").style.display = "none";
 });
 
+input.addEventListener("keypress", (event) => {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    getCity();
+  }
+});
+
 function getCity() {
   city = input.value;
   url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
