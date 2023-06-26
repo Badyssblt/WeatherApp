@@ -22,6 +22,7 @@
             </div>
             <div class="container__title">
                 <h2 id="container__title__id"></h2>
+                <i class="fas fa-heart"></i>
             </div>
             <div class="container__img">
                 <img src="" alt="" id="container__img__id">
@@ -31,6 +32,14 @@
             </div>
             <div class="container__details">
                 <i class="fas fa-angle-left" id="details" onclick="displayDetailsDiv('details__id')"></i>
+            </div>
+            <div class="container__menu">
+                <div class="container__menu__home">
+                    <i class="fas fa-house"></i>
+                </div>
+                <div class="container__menu__location">
+                    <i class="fas fa-database"></i>
+                </div>
             </div>
         </div>
         <div class="details" id="details__id" style="display: none;">
@@ -42,6 +51,10 @@
                 <img src="./imgs/wind.png" alt="">
                 <h1 id="details__winds__id"></h1>
             </div>
+        </div>
+
+        <div class="location">
+            <h1 id="location__fav">Mes favoris</h1>
         </div>
         <script src="app.js"></script>
         <script src="https://kit.fontawesome.com/c1cb64b22b.js" crossorigin="anonymous"></script>
