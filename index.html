@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <div class="container__date">
+                <i class="fas fa-location-dot" id="container__temp__location__id"></i>
+                <div class="container__date__inputdiv">
+                    <input type="text" placeholder="Entrer votre ville " style="display: none;" id="container__temp__location__input__id" class="container__temp__location__input" onclick="getCity()">
+                    <i class="fas fa-xmark" style="display: none;" id="close__icon"></i>
+                </div>
+                <div class="container__date__div">
+                    <h1 id="container__date__id"></h1>
+                </div>
+                <h1 id="error" style="display: none;">Cette ville n'est pas disponible</h1>
+            </div>
+            <div class="container__title">
+                <h2 id="container__title__id"></h2>
+            </div>
+            <div class="container__img">
+                <img src="" alt="" id="container__img__id">
+            </div>
+            <div class="container__temp">
+                <h1 id="container__temp__id"></h1>
+            </div>
+            <div class="container__details">
+                <i class="fas fa-angle-left" id="details" onclick="displayDetailsDiv('details__id')"></i>
+            </div>
+        </div>
+        <div class="details" id="details__id" style="display: none;">
+            <div class="details__humidity">
+                <img src="./imgs/water.png" alt="">
+                <h1 id="details__humidity__id"></h1>
+            </div>
+            <div class="details__winds">
+                <img src="./imgs/wind.png" alt="">
+                <h1 id="details__winds__id"></h1>
+            </div>
+        </div>
+        <script src="app.js"></script>
+        <script src="https://kit.fontawesome.com/c1cb64b22b.js" crossorigin="anonymous"></script>
+    </main>
+</body>
+</html>
