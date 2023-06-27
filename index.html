@@ -8,7 +8,7 @@
 </head>
 <body>
     <main>
-        <div class="container">
+        <div class="container" id="container__id">
             <div class="container__date">
                 <i class="fas fa-location-dot" id="container__temp__location__id"></i>
                 <div class="container__date__inputdiv">
@@ -22,7 +22,7 @@
             </div>
             <div class="container__title">
                 <h2 id="container__title__id"></h2>
-                <i class="fas fa-heart"></i>
+                <i class="fas fa-heart heart" id="fav_id" style="display: none;"></i>
             </div>
             <div class="container__img">
                 <img src="" alt="" id="container__img__id">
@@ -35,10 +35,10 @@
             </div>
             <div class="container__menu">
                 <div class="container__menu__home">
-                    <i class="fas fa-house"></i>
+                    <i class="fas fa-house" id="container__menu__fav__id" onclick="displayMenu('container__id')"></i>
                 </div>
                 <div class="container__menu__location">
-                    <i class="fas fa-database"></i>
+                    <i class="fas fa-heart " onclick="displayMenu('location__id')"></i>
                 </div>
             </div>
         </div>
@@ -53,8 +53,19 @@
             </div>
         </div>
 
-        <div class="location">
+        <div class="location" style="display: none;" id="location__id">
             <h1 id="location__fav">Mes favoris</h1>
+            <div class="location__list__fav" id="location__list__fav__id">
+                
+            </div>
+            <div class="container__menu location__menu">
+                <div class="container__menu__home">
+                    <i class="fas fa-house" id="container__menu__fav__id" onclick="displayMenu('container__id')"></i>
+                </div>
+                <div class="container__menu__location">
+                    <i class="fas fa-heart " onclick="displayMenu('location__id')"></i>
+                </div>
+            </div>
         </div>
         <script src="app.js"></script>
         <script src="https://kit.fontawesome.com/c1cb64b22b.js" crossorigin="anonymous"></script>

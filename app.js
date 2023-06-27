@@ -7,6 +7,8 @@ const locationId = document.getElementById("container__temp__location__id");
 const input = document.getElementById("container__temp__location__input__id");
 let city = "Rennes";
 const details = document.getElementById("details");
+const favId = document.getElementById("fav_id");
+let fav = [];
 
 let url =
   "https://api.openweathermap.org/data/2.5/weather?q=" +
@@ -30,12 +32,14 @@ async function getWeather(city) {
     temp.style.display = "none";
     dateId.style.display = "none";
     document.getElementById("container__img__id").style.display = "none";
+    document.getElementById("fav_id").style.display = "none";
   } else {
     document.getElementById("error").style.display = "none";
     temp.style.display = "block";
     title.style.display = "block";
     document.getElementById("container__img__id").style.display = "block";
     dateId.style.display = "block";
+    document.getElementById("fav_id").style.display = "block";
   }
 
   let data = await promise.json();
@@ -44,6 +48,9 @@ async function getWeather(city) {
   displayCloud(data.weather[0].main, data.weather[0].description);
   displayDetails(data.main.humidity, data.wind.speed);
   console.log(data);
+  favId.addEventListener("click", () => {
+    addToFav(data.name);
+  });
 }
 
 function displayInfo(city, temperature) {
@@ -101,4 +108,50 @@ function displayDetails(humidity, wind) {
   const water = document.getElementById("details__humidity__id");
   winds.textContent = wind + " m/s";
   water.textContent = humidity + " %";
+}
+
+function addToFav(cityName) {
+  if (fav.indexOf(`${cityName}`) !== -1) {
+  } else {
+    fav.push(cityName);
+    displayFav();
+  }
+}
+
+function initFav(id, text) {
+  let div = document.createElement("div");
+  let h1 = document.createElement("h1");
+  const arrow = document.createElement("i");
+  arrow.classList.add("fa-arrow-right");
+  arrow.classList.add("fas");
+  h1.style.fontSize = "1.25rem";
+  h1.textContent = text;
+  div.id = id;
+  div.classList.add("fav");
+  div.appendChild(h1);
+  div.appendChild(arrow);
+  document.getElementById("location__list__fav__id").appendChild(div);
+  console.log(div);
+}
+
+function displayFav() {
+  fav.forEach(function (text, index) {
+    let id = "fav-" + index;
+
+    if (!document.getElementById(id)) {
+      initFav(id, text);
+    } else {
+      console.log("faux");
+    }
+  });
+}
+
+function displayMenu(div) {
+  if (div === "location__id") {
+    document.getElementById("location__id").style.display = "flex";
+    document.getElementById("container__id").style.display = "none";
+  } else {
+    document.getElementById("location__id").style.display = "none";
+    document.getElementById("container__id").style.display = "flex";
+  }
 }

@@ -39,12 +39,12 @@ main {
     margin-right: 20px;
 }
 
-.fa-heart {
+.heart {
     font-size: 20px;
     transition: all .2s ease-in-out;
 }
 
-.fa-heart:hover {
+.heart:hover {
     color: #D2042D;
     cursor: pointer;
 }
@@ -56,6 +56,7 @@ main {
 
 #container__img__id {
     height: 100%;
+    align-self: center;
 }
 
 .container__date__inputdiv {
@@ -160,7 +161,7 @@ main {
     font-size: 30px;
 }
 
-.fa-database {
+.fa-heart {
     font-size: 30px;
 }
 
@@ -214,10 +215,42 @@ main {
     flex-direction: column;
     width: 20%;
     height: auto;
-    min-height: 300px;
+    min-height: 504px;
     background-color: #0093E9;
     background-image: linear-gradient(180deg, #0093E9 51%, #80D0C7 94%);
 }
+
+#location__fav {
+    margin-left: 15px;
+}
+
+.location__list__fav {
+    height: 75%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+}
+
+.fav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 130px;
+    height: 40px;
+    padding-left: 15px;
+    background: white;
+    border-radius: 15px;
+}
+
+.fa-arrow-right {
+    font-size: 1.25rem;
+    margin-right: 20px;
+}
+
+
+
+
 
 
 
