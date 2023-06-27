@@ -130,6 +130,9 @@ function initFav(id, text) {
   div.classList.add("fav");
   div.appendChild(h1);
   div.appendChild(arrow);
+  div.onclick = function () {
+    getFav(this);
+  };
   document.getElementById("location__list__fav__id").appendChild(div);
   console.log(div);
 }
@@ -154,4 +157,10 @@ function displayMenu(div) {
     document.getElementById("location__id").style.display = "none";
     document.getElementById("container__id").style.display = "flex";
   }
+}
+
+function getFav(elem) {
+  console.log("oui");
+  let content = elem.textContent;
+  getWeather(content);
 }

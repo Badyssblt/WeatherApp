@@ -238,9 +238,14 @@ main {
     justify-content: space-between;
     width: 130px;
     height: 40px;
+    margin-left: 15px;
     padding-left: 15px;
     background: white;
     border-radius: 15px;
+}
+
+.fav:hover {
+    cursor: pointer;
 }
 
 .fa-arrow-right {
