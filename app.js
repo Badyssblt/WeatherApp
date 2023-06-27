@@ -132,6 +132,7 @@ function initFav(id, text) {
   div.appendChild(arrow);
   div.onclick = function () {
     getFav(this);
+    displayMenu("container__id");
   };
   document.getElementById("location__list__fav__id").appendChild(div);
   console.log(div);
